@@ -2,8 +2,10 @@ package mysql
 
 import (
 	"fmt"
-	"github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/conf"
 	"os"
+
+	"github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/biz/model"
+	"github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/conf"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -30,11 +32,6 @@ func Init() {
 	if err != nil {
 		panic(err)
 	}
-
-	type Version struct {
-		Version string
-	}
-	var v Version
-	DB.Raw("SELECT VERSION() as version").Scan(&v)
-	fmt.Println("MySQL Version: ", v.Version)
+	DB.AutoMigrate(&model.User{})
+	fmt.Printf("%#v", DB.Debug().Exec("select version()"))
 }
