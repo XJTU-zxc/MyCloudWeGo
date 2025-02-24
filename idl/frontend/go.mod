@@ -1,0 +1,1 @@
+module github.com/XJTU-zxc/MyCloudWeGo/app/frontend

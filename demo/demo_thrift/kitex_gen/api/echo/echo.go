@@ -13,7 +13,7 @@ import (
 var errInvalidMessageType = errors.New("invalid message type for service method handler")
 
 var serviceMethods = map[string]kitex.MethodInfo{
-	"echo": kitex.NewMethodInfo(
+	"Echo": kitex.NewMethodInfo(
 		echoHandler,
 		newEchoEchoArgs,
 		newEchoEchoResult,
@@ -118,7 +118,7 @@ func (p *kClient) Echo(ctx context.Context, request *api.Request) (r *api.Respon
 	var _args api.EchoEchoArgs
 	_args.Request = request
 	var _result api.EchoEchoResult
-	if err = p.c.Call(ctx, "echo", &_args, &_result); err != nil {
+	if err = p.c.Call(ctx, "Echo", &_args, &_result); err != nil {
 		return
 	}
 	return _result.GetSuccess(), nil

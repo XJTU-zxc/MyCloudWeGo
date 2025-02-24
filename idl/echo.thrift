@@ -9,5 +9,5 @@ struct Response {
 }
 
 service Echo {
-  Response echo(1: Request request)
+  Response Echo(1: Request request)
 }

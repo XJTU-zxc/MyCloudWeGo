@@ -4,8 +4,8 @@ import (
 	"log"
 
 	"github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/biz/dal"
-	"github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/biz/dal/mysql"
-	"github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/biz/model"
+	// "github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/biz/dal/mysql"
+	// "github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/biz/model"
 	"github.com/joho/godotenv"
 )
 

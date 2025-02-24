@@ -374,7 +374,7 @@ func (p *EchoEchoArgs) FastWrite(buf []byte) int {
 
 func (p *EchoEchoArgs) FastWriteNocopy(buf []byte, binaryWriter bthrift.BinaryWriter) int {
 	offset := 0
-	offset += bthrift.Binary.WriteStructBegin(buf[offset:], "echo_args")
+	offset += bthrift.Binary.WriteStructBegin(buf[offset:], "Echo_args")
 	if p != nil {
 		offset += p.fastWriteField1(buf[offset:], binaryWriter)
 	}
@@ -385,7 +385,7 @@ func (p *EchoEchoArgs) FastWriteNocopy(buf []byte, binaryWriter bthrift.BinaryWr
 
 func (p *EchoEchoArgs) BLength() int {
 	l := 0
-	l += bthrift.Binary.StructBeginLength("echo_args")
+	l += bthrift.Binary.StructBeginLength("Echo_args")
 	if p != nil {
 		l += p.field1Length()
 	}
@@ -501,7 +501,7 @@ func (p *EchoEchoResult) FastWrite(buf []byte) int {
 
 func (p *EchoEchoResult) FastWriteNocopy(buf []byte, binaryWriter bthrift.BinaryWriter) int {
 	offset := 0
-	offset += bthrift.Binary.WriteStructBegin(buf[offset:], "echo_result")
+	offset += bthrift.Binary.WriteStructBegin(buf[offset:], "Echo_result")
 	if p != nil {
 		offset += p.fastWriteField0(buf[offset:], binaryWriter)
 	}
@@ -512,7 +512,7 @@ func (p *EchoEchoResult) FastWriteNocopy(buf []byte, binaryWriter bthrift.Binary
 
 func (p *EchoEchoResult) BLength() int {
 	l := 0
-	l += bthrift.Binary.StructBeginLength("echo_result")
+	l += bthrift.Binary.StructBeginLength("Echo_result")
 	if p != nil {
 		l += p.field0Length()
 	}

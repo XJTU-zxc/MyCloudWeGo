@@ -1,11 +1,13 @@
 package main
 
 import (
-	"github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/biz/dal"
-	"github.com/joho/godotenv"
 	"log"
 	"net"
 	"time"
+
+	"github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/biz/dal"
+	"github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/middleware"
+	"github.com/joho/godotenv"
 
 	"github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/conf"
 	"github.com/XJTU-zxc/MyCloudWeGo/demo/demo_proto/kitex_gen/pbapi/echoservice"
@@ -41,7 +43,7 @@ func kitexInit() (opts []server.Option) {
 	if err != nil {
 		panic(err)
 	}
-	opts = append(opts, server.WithServiceAddr(addr))
+	opts = append(opts, server.WithServiceAddr(addr), server.WithMiddleware(middleware.Middleware))
 
 	// service info
 	opts = append(opts, server.WithServerBasicInfo(&rpcinfo.EndpointBasicInfo{
